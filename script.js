@@ -1,7 +1,7 @@
 
-// HOMEWORK #1 
+// HOMEWORK #1 АНКЕТА
 
- while (!(name = prompt("Ваше имя:"))) {
+ /* while (!(name = prompt("Ваше имя:"))) {
     alert('Значение не должно быть пустым');
   }
 
@@ -27,13 +27,13 @@
 
   alert("ваше ФИО: " + sername + " " + name + " " + midleName +
     "\n" + "ваш возраст в годах: " + age + "\n" + "ваш возраст в днях: " + allDays +
-    "\n" + "через пять лет вам будет: " + future + "\n" + "ваш пол: " + gender + "\n" + "вы на пенсии: " + pension);
+    "\n" + "через пять лет вам будет: " + future + "\n" + "ваш пол: " + gender + "\n" + "вы на пенсии: " + pension); */
 
 
 
-//HOMEWORK #2
+//HOMEWORK #2 МАССИВ
 
-arr = [5, 7,
+/* arr = [5, 7,
     [4, [2], 8, [1, 3], 2],
     [9, []],
     1, 8
@@ -52,17 +52,12 @@ function treeSum(array) {
 }
 
 console.log(treeSum(arr));
+ */
 
 
+//HOMEWORK #3 ПОДСЧЕТ ГЛАСНЫХ
 
-
-
-
-
-
-//HOMEWORK #3
-
-function countVowels() {
+/* function countVowels() {
     let k = 0;
     let stringsearch = ["а", "о", "и", "е", "ё", "э", "ы", "у", "ю", "я"];
     let string = prompt("Напишите что-нибудь");
@@ -75,4 +70,68 @@ function countVowels() {
     return k 
   }
 
-  console.log(countVowels());
+  console.log(countVowels()); */
+
+
+
+  // HOMEWORK #4 ПОДСЧЕТ ГЛАСНЫХ С ИСПОЛЬЗОВАНИЕМ ФУНКЦИЙ
+
+/* 
+  let text = prompt("Напишите что-нибудь").toLowerCase();
+
+  function countVowels(text) {
+    let arrayString = text.split('');
+    let stringSearch = ["а", "о", "и", "е", "ё", "э", "ы", "у", "ю", "я"];
+    let counter = 0;
+    arrayString.forEach(function (l) {
+      stringSearch.forEach(function (v) {
+        if (v === l) {
+          ++counter;
+        }
+      });
+    });
+    return counter;
+  }
+  console.log(countVowels(text)); */
+
+/////////////////////////////////////////////////////////
+
+ /*  let text = prompt("Напишите что-нибудь").toLowerCase();
+
+  function countVowels(text) {
+    let arrayString = text.split('');
+    let stringSearch = ["а", "о", "и", "е", "ё", "э", "ы", "у", "ю", "я"];
+    let counter = 0;
+    arrayString.filter((l) => {stringSearch.filter((v) => {
+      if (v === l) {
+        ++counter;
+      }
+    })});
+    return counter;
+  }
+  console.log(countVowels(text)); */
+
+  //////////////////////////////////////////////////////
+
+  /* let text = prompt("Напишите что-нибудь").toLowerCase();
+
+  function countVowels(text) {
+    let arrayString = text.split('');
+    let stringSearch = ["а", "о", "и", "е", "ё", "э", "ы", "у", "ю", "я"];
+    let result = arrayString.reduce((counter, l) => {
+      stringSearch.forEach((v) => {
+        if (v === l) {
+          ++counter;
+        }
+      });
+      return counter;
+    }, 0);
+    return result;
+  }
+  console.log(countVowels(text)); */
+  
+
+
+
+
+
