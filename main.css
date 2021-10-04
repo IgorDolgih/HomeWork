@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    background-color: lightgreen;
+    padding: 100px;
+}
+
+input {
+    padding: 20px;
+    font-weight: bold;
+}

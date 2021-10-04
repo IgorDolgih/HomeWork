@@ -129,8 +129,86 @@ console.log(treeSum(arr));
     return result;
   }
   console.log(countVowels(text)); */
-  
 
+
+
+// HOMEWORK #5  HashStorageFunc 
+
+        var s = new HashStorageFunction();
+
+        function EnterDrinkName() {
+            s.addValue();
+        }
+
+        function GetDrinkInformation() {
+            var name = prompt('Рецепт какого напитка вы хотите узнать?');
+            var info = s.getValue(name);
+            if ( info === undefined || info === null) {
+                return alert('Мы не знаем такого напитка!');
+            }
+            return alert ('название: ' + name + '\n' + 'алкогольный: ' + info.isAlcohol + '\n' + 'рецепт приготовление: ' + info.recipe);
+        }
+
+        function DeleteDrinkRecipe() {
+            var deleteRecipe = prompt('Рецепт какого напитка хотите удалить?');
+            var infoDelete = s.deleteValue(deleteRecipe) ? alert('Рецепт успешно удален') : alert('Мы не знаем такого напитка');
+        }
+
+        function DrinkList() {
+            alert(s.getKeys());
+        }
+
+        function HashStorageFunction() {
+
+            var HashStorage = {};
+            var self = this;
+
+            self.addValue = function () {
+
+
+                var drink = prompt('Введите название напитка');
+                if (!(drink)) {
+                    alert('Вы не ввели название напитка! Операция отменена!');
+                    return;
+                }
+
+                var isAlcohol = confirm('Напиток алкогольный?') ? 'да' : 'нет';
+
+                var recipe = prompt('Введите рецепт приготовления');
+                if (drink === null || drink === undefined) {
+                    alert('Вы не ввели рецепт напитка! Операция отменена!');
+                    return;
+                }
+
+                HashStorage[drink] = {
+                    isAlcohol: isAlcohol,
+                    recipe: recipe
+                }
+            };
+
+            self.getValue = function (key) {
+                return HashStorage[key];
+            };
+
+            self.deleteValue = function (key) {
+
+                if (HashStorage[key] === undefined || HashStorage[key] === null) {
+                    return false;
+                }
+                return delete HashStorage[key];
+            };
+
+            self.getKeys = function () {
+
+                var result = [];
+
+                for (var key in HashStorage) {
+                    result.push(key);
+                }
+
+                return result;
+            };
+        }
 
 
 
